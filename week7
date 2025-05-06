@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i,j,k;
+int sn;
+int st[20];
+cout<<"\n How many stations: ";
+cin>>sn;
+char op;
+do
+{
+cout<<"\n Enter status of stations";
+for (i=0;i<sn;i++)
+{
+ cout<<"\n Enter status of station "<<i+1<<" : ";
+ cin>>st[i];
+}
+//Print ready stations
+for (i=0;i<sn;i++)
+{
+ if(st[i]==1)
+ {
+ cout<<"\n Station "<<i+1<<" is ready to transmit";
+ }
+}
+cout<<"\n Repeat? Press Y :";
+cin>>op;
+}
+while(op=='y' || op=='Y');
+getch();
+}
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 40
+OUTPUT:
+How many stations: 8
+Enter status of stations
+Enter status of station 1 : 0
+Enter status of station 2 : 1
+Enter status of station 3 : 0
+Enter status of station 4 : 1
+Enter status of station 5 : 1
+Enter status of station 6 : 1
+Enter status of station 7 : 0
+Enter status of station 8 : 0
+Station 2 is ready to transmit
+Station 4 is ready to transmit
+Station 5 is ready to transmit
+Station 6 is ready to transmit
+Repeat? Press Y :Y
+Enter status of stations
+Enter status of station 1 : 1
+Enter status of station 2 : 0
+Enter status of station 3 : 0
+Enter status of station 4 : 1
+Enter status of station 5 : 0
+Enter status of station 6 : 0
+Enter status of station 7 : 0
+Enter status of station 8 : 0
+Station 1 is ready to transmit
+Station 4 is ready to transmit
+Repeat? Press Y :N
