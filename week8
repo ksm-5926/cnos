@@ -1,0 +1,171 @@
+Mkdir :make directories
+Usage: mkdir [OPTION] DIRECTORY...
+eg. mkdir laxmi
+ls : list directory contents
+Usage: ls [OPTION]... [FILE]...
+eg. ls, ls l,
+ls laxmi
+cd : changes directories
+Usage: cd [DIRECTORY]
+eg. cd laxmi
+pwd: print name of current working directory
+Usage: pwd
+CMR Institute of Technology Page 42
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 43
+vim : Vi Improved, a programmers text editor
+Usage: vim [OPTION] [file]...
+eg. vim file1.txt
+cp :copy files and directories
+Usage: cp [OPTION]... SOURCE DEST
+eg. cp sample.txt sample_copy.txt
+cp :sample_copy.txt target_dir
+mv : move (rename) files
+Usage: mv [OPTION]... SOURCE DEST
+eg. mv source.txt target_dir
+mv old.txt new.txt
+rm: remove files or directories
+Usage: rm [OPTION]... FILE...
+eg. rm file1.txt , rm rf
+some_dir
+find:search for files in a directory hierarchy
+Usage: find [OPTION] [path] [pattern]
+eg. find file1.txt, find name
+file1.txt
+history:prints recently used commands
+Usage: history
+Security filespermissions:
+3 types of file permissions – read, write, execute
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 44
+• 10 bit format from 'ls l'
+command
+1 2 3 4 5 6 7 8 9 10
+file type owner group others
+eg. drwxrw-r—means owner has all three permissions,
+group has read and write, others have only read permission
+• read permission – 4, write – 2, execute -1
+eg.rwxrw-r-- = 764
+673 = rw-rwx-wx
+chmod:change file access permissions
+Usage: chmod [OPTION] [MODE] [FILE]
+eg. chmod 744 calculate.sh
+chown: change file owner and group
+Usage: chown [OPTION]... OWNER[:[GROUP]] FILE...
+eg. chown remo myfile.txt
+su : change user ID or become superuser
+Usage: su [OPTION] [LOGIN]
+eg. su remo, su
+passwd : update a user’s authentication tokens(s)
+Usage: passwd [OPTION]
+eg. passwd
+who: show who is logged on
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 45
+Usage: who [OPTION]
+eg. who , who b , who q
+Process utilities:
+ps : report a snapshot of the current processes
+Usage: ps [OPTION]
+eg. ps, ps el
+kill :to kill a process(using signal mechanism)
+Usage: kill [OPTION] pid
+eg. kill 9
+2275
+Tar: to archive a file
+Usage: tar [OPTION] DEST SOURCE
+eg. tar cvf
+/home/archive.tar /home/original
+tar xvf
+/home/archive.tar
+Zip:package and compress (archive) files
+Usage: zip [OPTION] DEST SOURSE
+eg. zip original.zip original
+unzip: list, test and extract compressed files in a ZIP archive
+Usage: unzip filename
+eg. unzip original.zip
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 46
+Disk utilities:
+du (abbreviated from disk usage) is a standard Unixprogram used to estimate file space usage—
+space used under a particular directory or files on a file system.
+du takes a single argument, specifying a pathname for du to work; if it is not specified, the current 
+directory is used. The SUS mandates for du the following options:
+-a, display an entry for each file (and not directory) contained in the current directory
+-H, calculate disk usage for link references specified on the command line
+-k, show sizes as multiples of 1024 bytes, not 512-byte
+-L, calculate disk usage for link references anywhere
+-s, report only the sum of the usage in the current directory, not for each file
+-x, only traverse files and directories on the device on which the pathname argument is 
+specified.
+Other Unix and Unix-like operating systems may add extra options. For example, BSD and GNU 
+du specify a -h option, displaying disk usage in a format easier to read by the user, adding units 
+with the appropriate SI prefix’
+$ du-sk*
+152304 directoryOne
+1856548 directoryTwo
+Sum of directories in human-readable format (Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and 
+Petabyte):
+$ du-sh*
+149M directoryOne
+1.8G directoryTwo
+disk usage of all subdirectories and files including hidden files within the current directory (sorted 
+by filesize) :
+$ du-sk .[!.]**|sort-n
+disk usage of all subdirectories and files including hidden files within the current directory (sorted 
+by reverse filesize) :
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 47
+$ du-sk .[!.]**|sort–nr
+The weight of directories:
+$ du-d1-c-h
+df command : Report file system disk space usage
+Df command examples - to check free disk space
+Typedf -h or df -k to list free disk space:
+$ df -h
+OR
+$ df –k
+Output:
+Filesystem Size Used Avail Use% Mounted on
+/dev/sdb1 20G 9.2G 9.6G 49% /
+varrun 393M 144k 393M 1% /var/run
+varlock 393M 0 393M 0% /var/lock
+procbususb 393M 123k 393M 1% /proc/bus/usb
+udev 393M 123k 393M 1% /dev
+devshm 393M 0 393M 0% /dev/shm
+lrm 393M 35M 359M 9% /lib/modules/2.6.20-15-generic/volatile
+/dev/sdb5 29G 5.4G 22G 20% /media/docs
+/dev/sdb3 30G 5.9G 23G 21% /media/isomp3s
+/dev/sda1 8.5G 4.3G 4.3G 51% /media/xp1
+/dev/sda2 12G 6.5G 5.2G 56% /media/xp2
+/dev/sdc1 40G 3.1G 35G 9% /media/backup
+du command examples
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 48
+du shows how much space one ore more files or directories is using.
+$ du -sh
+103M
+-s option summarize the space a directory is using and -h option provides "Human-readable" 
+output.
+Networking commands:
+These are most useful commands in my list while working on Linux server , this enables you to 
+quickly troubleshoot connection issues e.g. whether other system is connected or not , whether 
+other host is responding or not and while working for FIX connectivity for advanced trading 
+system this tools saves quite a lot of time .
+• finding host/domain name and IP address - hostname
+• test network connection – ping
+• getting network configuration – ifconfig
+• Network connections, routing tables, interface statistics – netstat
+• query DNS lookup name – nslookup
+• communicate with other hostname – telnet
+• outing steps that packets take to get to network host – traceroute
+• view user information – finger
+• checking status of destination host - telnet
+Example of Networking commands in Unix
+let's see some example of various networking command in Unix and Linux. Some of them are 
+quite basic e.g. ping and telnet and some are more powerful e.g. nslookup and netstat. When you 
+used these commands in combination of find and grep you can get anything you are looking for
+e.g. hostname, connection end points, connection status etc.
+hostname
+hostnamewith no options displays the machines host name
+hostname –ddisplays the domain name the machine belong
