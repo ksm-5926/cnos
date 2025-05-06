@@ -1,0 +1,69 @@
+oid main()
+{
+int pid[10],bt[10],pr[10],wt[10],tat[10],n,twt=0,ttat=0,i,j,t;
+float awt,atat;
+printf("Enter no.of processes:");
+scanf("%d",&n);
+printf("\n Enter burst times:");
+for(i=0;i<n;i++)
+scanf("%d",&bt[i]);
+printf("\n Enter PID:");
+for(i=0;i<n;i++)
+scanf("%d",&pid[i]);
+printf("\n Enter Priorities:");
+for(i=0;i<n;i++)
+scanf("%d",&pr[i]);
+for(i=0;i<n;i++){
+for(j=i+1;j<n;j++){
+if(pr[i]>pr[j]){
+t=pr[i];
+pr[i]=pr[j];
+CMR Institute of Technology Page 72
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 73
+pr[j]=t;
+t=bt[i];
+bt[i]=bt[j];
+bt[j]=t;
+t=pid[i];
+pid[i]=pid[j];
+pid[j]=t;
+}}}
+wt[0]=0;
+tat[0]=bt[0];
+for(i=1;i<n;i++){
+wt[i]=tat[i-1];
+tat[i]=bt[i]+wt[i];
+}
+for(i=0;i<n;i++){
+ttat= ttat+tat[i];
+twt=twt+wt[i];
+}
+printf("\n PID PRIORITY \t BT \t WT \t TAT");
+for(i=0;i<n;i++)
+II B.Tech II semester(CSE) CN&OS LAB
+CMR Institute of Technology Page 74
+printf("\n %d\t%d\t%d\t%d\t%d",pid[i],pr[i],bt[i],wt[i],tat[i]);
+awt=(float)twt/n;
+atat=(float)ttat/n;
+printf("\nAvg. Waiting Time=%f",awt);
+printf("\nAvg. Turn around time=%f",atat);
+}
+Output:
+Enter noof Processes :4
+Enter Burst Times:2
+6
+4
+5
+Enter Priorities :3
+2
+6
+1
+PID PRIORITY BT WT TT
+5 1 5 0 5 
+6 2 6 5 11 
+3 3 2 11 13 
+4 6 4 3 17 
+Average Waiting Time: 7.250000
+AvG Turnaround Time: 11.500000
+Process returned 32(0X20) execution time:86.108s
